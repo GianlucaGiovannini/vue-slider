@@ -56,11 +56,24 @@ const app = new Vue({
                 image: './assets/img/05.jpg',
                 title: 'Paradise',
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.',
-            }
+            },
         ]
     },
 
     methods: {
+        prevImage() {
+            if (this.activeImage === 0) {
+                this.activeImage = this.sliders[0].image
+            };
+            this.activeImage--;
+        },
 
+        nextImage() {
+            this.activeImage++;
+            if (this.activeImage === this.sliders.length) {
+                this.activeImage = this.sliders[0].image
+            };
+
+        },
     },
 });
