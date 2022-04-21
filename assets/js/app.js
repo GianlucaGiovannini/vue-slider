@@ -82,18 +82,26 @@ const app = new Vue({
             };
         },
 
+        start() {
+            this.timer = setInterval(() => {
+
+                this.activeImg++;
+
+                if (this.activeImg === this.sliders.length) {
+                    this.activeImg = 0
+                }
+
+            }, 2000)
+        },
+
+        stop() {
+            clearInterval(this.timer)
+        },
+
     },
 
     mounted: function() {
-        setInterval(() => {
-
-            this.activeImg++;
-
-            if (this.activeImg === this.sliders.length) {
-                this.activeImg = 0
-            }
-
-        }, 3000)
+        this.start()
     },
 
 

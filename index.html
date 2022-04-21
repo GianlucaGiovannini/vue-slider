@@ -29,7 +29,7 @@
                 </div>
                 <!-- /.sliders -->
 
-                <div class="slider-thumb">
+                <div class="slider-thumb" @mouseover="stop" @mouseleave="start">
                     <img :id="index" class="thumb" :src="element.image" :class="activeImg === index ? 'active' : '' " v-for="(element, index) in sliders" :alt="'location ' + sliders[index].title" @click="activeImg = index">
 
                     <div class="navigator">
