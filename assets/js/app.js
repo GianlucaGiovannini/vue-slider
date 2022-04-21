@@ -83,15 +83,7 @@ const app = new Vue({
         },
 
         start() {
-            this.timer = setInterval(() => {
-
-                this.activeImg++;
-
-                if (this.activeImg === this.sliders.length) {
-                    this.activeImg = 0
-                }
-
-            }, 2000)
+            this.timer = setInterval(this.nextImage, 2000)
         },
 
         stop() {
@@ -100,7 +92,7 @@ const app = new Vue({
 
     },
 
-    mounted: function() {
+    mounted() {
         this.start()
     },
 
