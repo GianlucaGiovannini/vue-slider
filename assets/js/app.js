@@ -36,26 +36,31 @@ const app = new Vue({
                 image: './assets/img/01.jpg',
                 title: 'Svezia',
                 text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+                id: 0,
             },
             {
                 image: './assets/img/02.jpg',
                 title: 'Svizzera',
                 text: 'Lorem ipsum.',
+                id: 1,
             },
             {
                 image: './assets/img/03.jpg',
                 title: 'Gran Bretagna',
                 text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+                id: 2,
             },
             {
                 image: './assets/img/04.jpg',
                 title: 'Germania',
                 text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam.',
+                id: 3,
             },
             {
                 image: './assets/img/05.jpg',
                 title: 'Paradise',
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.',
+                id: 4,
             },
         ]
     },
@@ -77,8 +82,19 @@ const app = new Vue({
             };
         },
 
-        changeView(event) {
-            this.activeImg = event.currentTarget.id
-        },
-    }
+    },
+
+    mounted: function() {
+        setInterval(() => {
+
+            this.activeImg++;
+
+            if (this.activeImg === this.sliders.length) {
+                this.activeImg = 0
+            }
+
+        }, 3000)
+    },
+
+
 });
