@@ -62,16 +62,16 @@ const app = new Vue({
 
     methods: {
         prevImage() {
-            if (this.activeImage === 0) {
-                this.activeImage = this.sliders[0].image
+            if (this.activeImg === 0) {
+                this.activeImg = this.sliders.length
             };
-            this.activeImage--;
+            this.activeImg--;
         },
 
         nextImage() {
-            this.activeImage++;
-            if (this.activeImage === this.sliders.length) {
-                this.activeImage = this.sliders[0].image
+            this.activeImg++;
+            if (this.activeImg === this.sliders.length) {
+                this.activeImg = 0
             };
 
         },
