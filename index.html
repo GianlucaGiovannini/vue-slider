@@ -30,7 +30,7 @@
                 <!-- /.sliders -->
 
                 <div class="slider-thumb">
-                    <img class="thumb" :src="element.image" :class="activeImg === index ? 'active' : '' " v-for="(element, index) in sliders" :alt="'location ' + sliders[index].title">
+                    <img :id="index" class="thumb" :src="element.image" :class="activeImg === index ? 'active' : '' " v-for="(element, index) in sliders" :alt="'location ' + sliders[index].title" @click="changeView($event)">
 
                     <div class="navigator">
                         <div class="prev" @click="prevImage">

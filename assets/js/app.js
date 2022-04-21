@@ -65,15 +65,20 @@ const app = new Vue({
             if (this.activeImg === 0) {
                 this.activeImg = this.sliders.length
             };
+
             this.activeImg--;
         },
 
         nextImage() {
             this.activeImg++;
+
             if (this.activeImg === this.sliders.length) {
                 this.activeImg = 0
             };
-
         },
-    },
+
+        changeView(event) {
+            this.activeImg = event.currentTarget.id
+        },
+    }
 });
