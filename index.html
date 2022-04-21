@@ -19,30 +19,18 @@
         <div class="wrapper">
             <div class="container">
                 <div class="sliders-big">
-                    <img src="./assets/img/01.jpg" alt="">
+                    <img :src="sliders[activeImg].image" :alt='"location " + sliders[activeImg].title'>
+                    <div class="description">
+                        <div class="desc_title">
+                            {{sliders[activeImg].title}}
+                        </div>
+                        {{sliders[activeImg].text}}
+                    </div>
                 </div>
                 <!-- /.sliders -->
 
                 <div class="slider-thumb">
-                    <div class="thumb">
-                        <img src="./assets/img/01.jpg" class="active" alt="">
-                    </div>
-                    <div class="thumb">
-                        <img src="./assets/img/01.jpg" alt="">
-                    </div>
-                    <!-- /.thumb -->
-                    <div class="thumb">
-                        <img src="./assets/img/01.jpg" alt="">
-                    </div>
-                    <!-- /.thumb -->
-                    <div class="thumb">
-                        <img src="./assets/img/01.jpg" alt="">
-                    </div>
-                    <!-- /.thumb -->
-                    <div class="thumb">
-                        <img src="./assets/img/01.jpg" alt="">
-                    </div>
-                    <!-- /.thumb -->
+                    <img class="thumb" :src="image.image" :class="activeImage === index ? 'active' : '' " v-for="(image, index) in sliders" alt="'location' + slider[index].title">
 
                     <div class="navigator">
                         <div class="prev">
