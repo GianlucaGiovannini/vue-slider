@@ -18,7 +18,7 @@
     <div id="app">
         <div class="wrapper">
             <div class="container">
-                <div class="sliders-big">
+                <div class="sliders-big" @mouseenter="stop" @mouseleave="start">
                     <img :src="sliders[activeImg].image" :alt='"location " + sliders[activeImg].title'>
                     <div class="description">
                         <div class="desc_title">
@@ -29,8 +29,9 @@
                 </div>
                 <!-- /.sliders -->
 
-                <div class="slider-thumb" @mouseover="stop" @mouseleave="start">
-                    <img :id="index" class="thumb" :src="element.image" :class="activeImg === index ? 'active' : '' " v-for="(element, index) in sliders" :alt="'location ' + sliders[index].title" @click="activeImg = index">
+                <div class="slider-thumb">
+
+                    <img class="thumb" :src="element.image" :class="activeImg === index ? 'active' : '' " v-for="(element, index) in sliders" :alt="'location ' + sliders[index].title" @click="activeImg = index">
 
                     <div class="navigator">
                         <div class="prev" @click="prevImage">
